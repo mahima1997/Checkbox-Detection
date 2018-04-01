@@ -95,39 +95,6 @@ for i in range(hsize):
             count+=1
 if count>2:
     print("filled")
-# extrema = res2.convert("L").getextrema()
-# if extrema == (1, 1):
-#     print("unfilled")
-# #elif extrema == (1, 1):
-# else:
-#     print("filled")
-
-
-
-# 	# compute the center of the contour
-# M = cv2.moments(cnt)
-# cX = int(M["m10"] / M["m00"])
-# cY = int(M["m01"] / M["m00"])
-    
-
-
-# In[ ]:
-
-
-import cv2
-from PIL import Image
-import numpy as np
-
-im = cv2.imread('Page1.jpg')
-small = cv2.resize(im, (0,0), fx=0.5, fy=0.5) 
-
-imgray = cv2.cvtColor(small,cv2.COLOR_BGR2GRAY)
-ret,thresh = cv2.threshold(imgray,127,255,0)
-image, contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-cnt=contours[874]
-cv2.drawContours(image, [cnt], 0, (0,255,0), 3)
-cv2.imshow("Contour", image)
-cv2.waitKey(0)
 
 print("total square_contours detected:",len(square_contours))
 print(square_contours)
@@ -138,24 +105,8 @@ print("\n")
 print("total checked_square_contours detected:",len(checked_square_contours))
 print(checked_square_contours)
            
-area0 = cv2.contourArea(contours[1000])
-area1 = cv2.contourArea(contours[1497])
-area2 = cv2.contourArea(contours[8])
-print(area0,area1,area2)
-
-
-# filled_squares=0
-# img=[]
-# img = [None] * len(square_contours)
-# for i,j in zip(range (len(square_contours)),square_contours):
-#     img[i] = image.copy()
-#     cnt = contours[j]
-#     cv2.drawContours(img[i], [cnt], 0, (0,255,0), 3)
-#     if(np.where(cnt == 100)):
-#         filled_squares+=1
-
-# print("Number of filled squares out of them",filled_squares)
-# output = np.hstack(img)
-# cv2.imshow("Contour", output)
-# cv2.waitKey(0)
+# area0 = cv2.contourArea(contours[1000])
+# area1 = cv2.contourArea(contours[1497])
+# area2 = cv2.contourArea(contours[8])
+# print(area0,area1,area2)
 
